@@ -2,6 +2,25 @@ Our Dataset: https://www.kaggle.com/datasets/kieranpoc/steam-reviews/data
 
 # DATA EXPLORATION
 
+### Large Dataset Management
+
+Our dataset handling presented significant performance challenges:
+
+- Size Challenge: The original CSV file (50GB) required maxing out cluster configurations
+- Performance Bottleneck: Processing times were extremely slow due to the massive data volume
+- Conversion Solution: Implemented CSV to Parquet conversion to address performance issues
+  - Parquet format delivers 25-40x faster processing speeds
+  - Successfully reduced file size from 50GB to 20GB (60% reduction)
+
+### Enhanced Processing Strategy
+To handle the remaining data volume efficiently:
+
+- Converting all data to Parquet format for optimized columnar storage
+- Implementing targeted preprocessing to reduce dataset size further:
+  - Removing reviews containing only emojis
+  - Filtering out reviews with ASCII art
+- Maximizing cluster resources by configuring for maximum memory and cores
+
 ## **Preprocessing**
 
 - Translate all foreign languages into English
