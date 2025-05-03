@@ -31,9 +31,10 @@ To handle the remaining data volume efficiently:
 
 ## **Preprocessing** *done*
 
-- Translate all foreign languages into English
 - Send all characters to lower
-- Create new features as necessary
+- Drop irrelevant features
+- Drop all languages except English, Russian, and Simplified Chinese
+- Translate all foreign languages into English
 
 ### Word Embedding
 - Learns from context, less preprocessing needed
