@@ -29,7 +29,7 @@ To handle the remaining data volume efficiently:
   - Filtering out reviews with ASCII art
 - Maximizing cluster resources by configuring for maximum memory and cores
 
-## **Preprocessing**
+## **Preprocessing** *done*
 
 - Translate all foreign languages into English
 - Send all characters to lower
@@ -57,8 +57,8 @@ To get basic summary statistics, we can use `describe()` to get basic summary st
 
 ### Non-Numerical Feature Exploration
 
-- Average review length (grouped by language)
-- Average number of games owned
+- Average review length (grouped by language) *done*
+- Average number of games owned *done*
 - Number of games reviewed
 - Number of reviews per review author
   
