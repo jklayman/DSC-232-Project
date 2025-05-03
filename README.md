@@ -63,12 +63,14 @@ To get basic summary statistics, we can use `describe()` to get basic summary st
 - Number of games reviewed *done*
   
 ### Correlation Exploration:
-- Playtime at review vs votes_up *done*
-- (Playtime forever - playtime at review) vs votes_up
-- Review length vs playtime vs votes_up
-- Received for free vs votes_up
-- Early access vs votes_up
-- Number of game reviews vs votes_up
+- Playtime at review vs votes_up (users voting on a review)
+- Playtime at review vs voted_up (author voting on game)
+- (Playtime forever - playtime at review) vs votes_up (users voting on a review)
+- (Playtime forever - playtime at review) vs voted_up (author voting on game)
+- Review length vs playtime vs votes_up (users voting on a review)
+- Review length vs playtime vs voted_up (author voting on game)
+- Received for free vs voted_up (author voting on game)
+- Early access vs voted_up (author voting on game)
 
 ## **Possible Models for Sentiment Analysis:**
 - Word embedding using word2vec with logistic regression (less heavy preprocessing due to preserving semantics)
