@@ -32,7 +32,6 @@ To handle the remaining data volume efficiently:
 ## **Preprocessing**
 
 - Translate all foreign languages into English
-- Convert all timestamps from Unix time into datetime
 - Send all characters to lower
 - Create new features as necessary
 
@@ -59,7 +58,6 @@ To get basic summary statistics, we can use `describe()` to get basic summary st
 ### Non-Numerical Feature Exploration
 
 - Average review length (grouped by language)
-- Proportion of languages
 - Average number of games owned
 - Number of games reviewed
 - Number of reviews per review author
