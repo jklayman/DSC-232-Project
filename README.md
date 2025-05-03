@@ -59,8 +59,7 @@ To get basic summary statistics, we can use `describe()` to get basic summary st
 
 - Average review length (grouped by language) *done*
 - Average number of games owned *done*
-- Number of games reviewed
-- Number of reviews per review author
+- Number of games reviewed *done*
   
 ### Correlation Exploration:
 - Playtime at review vs voted_up
