@@ -63,7 +63,7 @@ To get basic summary statistics, we can use `describe()` to get basic summary st
 - Number of games reviewed *done*
   
 ### Correlation Exploration:
-- Playtime at review vs votes_up
+- Playtime at review vs votes_up *done*
 - (Playtime forever - playtime at review) vs votes_up
 - Review length vs playtime vs votes_up
 - Received for free vs votes_up
