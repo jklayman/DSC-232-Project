@@ -60,6 +60,7 @@ To handle the remaining data volume efficiently:
 - Dropped irrelevant features
 - Dropped all languages except English due to API limitations on translate package
 - Sent all characters to lower
+- Dropped discrepancies in forever_playtime and playtime_at_review (only using rows with forever_playtime > playtime at review)
 - Converted playtime to hours
 
 ### Word Embedding
