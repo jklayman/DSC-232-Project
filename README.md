@@ -85,10 +85,9 @@ To get basic summary statistics, we can use `describe()` to get basic summary st
 
 ### Non-Numerical Feature Exploration
 
-- Average review length (grouped by language) 236.341 characters
-- Average number of games owned: 145.9
-- Number of games reviewed: 96393
-- 
+- Average review length (grouped by language) 332.68 characters
+- Average number of games owned: 185.81
+- Number of games reviewed: 93404
   
 ### Correlation Exploration:
 - Playtime at review vs votes_up (users voting on a review)
