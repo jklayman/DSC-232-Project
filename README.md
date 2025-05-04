@@ -85,27 +85,28 @@ To get basic summary statistics, we can use `describe()` to get basic summary st
 
 ### Non-Numerical Feature Exploration
 
-- Average review length (grouped by language) 332.68 characters
-- Average number of games owned: 185.81
-- Number of games reviewed: 93404
+- Average review length (grouped by language) 321.19 characters
+- Average number of games owned: 171.65
+- Number of games reviewed: 94159
   
 ### Correlation Exploration:
 - Playtime at review vs votes_up (users voting on a review)
 - Playtime at review vs voted_up (author voting on game)
-|--------------------|---------------|--------|
++--------------------+---------------+--------+
 |                game|at_review_hours|voted_up|
-|--------------------|---------------|-------|
-|     Team Fortress 2|          79609|    true|
-|     Team Fortress 2|          66027|    true|
-|    Counter-Strike 2|          64963|    true|
-|Half-Life Deathma...|          61516|    true|
-|    Counter-Strike 2|          60231|    true|
-|Sid Meier's Civil...|          59038|    true|
-|       Day of Defeat|          59005|   false|
-|         Garry's Mod|          58742|    true|
-|Sid Meier's Civil...|          57197|    true|
-|Sid Meier's Civil...|          53351|    true|
-|--------------------|---------------|--------|
++--------------------+---------------+--------+
+|Sid Meier's Civil...|          81336|       1|
+|     Team Fortress 2|          79609|       1|
+|     Team Fortress 2|          66027|       1|
+|    Counter-Strike 2|          64963|       1|
+|Half-Life Deathma...|          61516|       1|
+|    Counter-Strike 2|          60231|       1|
+|Sid Meier's Civil...|          59038|       1|
+|       Day of Defeat|          59005|       0|
+|         Garry's Mod|          58742|       1|
+|Sid Meier's Civil...|          57197|       1|
++--------------------+---------------+--------+
+only showing top 10 rows
 - (Playtime forever - playtime at review) vs votes_up (users voting on a review)
 - (Playtime forever - playtime at review) vs voted_up (author voting on game)
 - Review length vs playtime vs votes_up (users voting on a review)
