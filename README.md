@@ -84,13 +84,29 @@ To get basic summary statistics, we can use `describe()` to get basic summary st
 
 ### Non-Numerical Feature Exploration
 
-- Average review length (grouped by language) 236 characters
+- Average review length (grouped by language) 236.341 characters
 - Average number of games owned: 145.9
 - Number of games reviewed: 96393
+- 
   
 ### Correlation Exploration:
 - Playtime at review vs votes_up (users voting on a review)
 - Playtime at review vs voted_up (author voting on game)
++--------------------+---------------+--------+
+|                game|at_review_hours|voted_up|
++--------------------+---------------+--------+
+|Sid Meier's Civil...|          81336|       1|
+|     Team Fortress 2|          79609|       1|
+|     Team Fortress 2|          66027|       1|
+|    Counter-Strike 2|          64963|       1|
+|Half-Life Deathma...|          61516|       1|
+|    Counter-Strike 2|          60231|       1|
+|Sid Meier's Civil...|          59038|       1|
+|       Day of Defeat|          59005|       0|
+|         Garry's Mod|          58742|       1|
+|Sid Meier's Civil...|          57197|       1|
++--------------------+---------------+--------+
+only showing top 10 rows
 - (Playtime forever - playtime at review) vs votes_up (users voting on a review)
 - (Playtime forever - playtime at review) vs voted_up (author voting on game)
 - Review length vs playtime vs votes_up (users voting on a review)
