@@ -81,15 +81,19 @@ To handle the remaining data volume efficiently:
     
 ## **Feature Exploration**
 
-To get basic summary statistics, we can use `describe()` to get basic summary statistics of the various numerical features. 
-
-### Non-Numerical Feature Exploration
+### Numerical Feature Exploration
 
 - Average review length (grouped by language) 321.19 characters
 - Average number of games owned: 171.65
 - Number of games reviewed: 94159
-  
+
+- number of reviews per game
+  ![Top 10 Reviewed Games](https://github.com/user-attachments/assets/c24b6192-fbcd-4943-bbdb-a2b726df686a)
+    
 ### Correlation Exploration:
+- Overall correlation between each feature
+  ![All Features Correlation Matrix](https://github.com/user-attachments/assets/d97fafad-d89f-4547-910e-cf38533df97b)
+
 - Playtime at review vs votes_up (users voting on a review)
 - Playtime at review vs voted_up (author voting on game)
 
@@ -106,15 +110,17 @@ To get basic summary statistics, we can use `describe()` to get basic summary st
 |Sid Meier's Civil...|          57197|    true|
 |Sid Meier's Civil...|          53351|    true|
 
+- Number of games owned vs number of reviews written
+  ![Games Owned vs. Reviews Written](https://github.com/user-attachments/assets/d41c6d10-df4f-4162-8d3a-47ec809bdb22)
 
-only showing top 10 rows
 - (Playtime forever - playtime at review) vs voted_up (author voting on game)
   ![Playtime After Reviewing vs. Review Vote](https://github.com/user-attachments/assets/78b56bc0-29e3-4a52-b946-bf2509e0a493)
-- 
+  
+- Review length vs voted_up (author voting on game)
+  ![Review Length vs. Review Vote](https://github.com/user-attachments/assets/21fd2432-2479-454e-8216-4e41cf4b30b3)
+
 - Review length vs playtime vs votes_up (users voting on a review)
-- Review length vs playtime vs voted_up (author voting on game)
-- Received for free vs voted_up (author voting on game)
-- Early access vs voted_up (author voting on game)
+  ![Review Length vs. Review Upvotes](https://github.com/user-attachments/assets/b6298567-b4d1-4fe7-aaed-41126ee0cddc)
 
 ## **Possible Models for Sentiment Analysis:**
 - Word embedding using word2vec with logistic regression (less heavy preprocessing due to preserving semantics)
