@@ -107,8 +107,9 @@ To get basic summary statistics, we can use `describe()` to get basic summary st
 |Sid Meier's Civil...|          57197|       1|
 +--------------------+---------------+--------+
 only showing top 10 rows
-- (Playtime forever - playtime at review) vs votes_up (users voting on a review)
 - (Playtime forever - playtime at review) vs voted_up (author voting on game)
+  ![Playtime After Reviewing vs. Review Vote](https://github.com/user-attachments/assets/78b56bc0-29e3-4a52-b946-bf2509e0a493)
+- 
 - Review length vs playtime vs votes_up (users voting on a review)
 - Review length vs playtime vs voted_up (author voting on game)
 - Received for free vs voted_up (author voting on game)
