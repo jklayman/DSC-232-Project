@@ -92,20 +92,21 @@ To get basic summary statistics, we can use `describe()` to get basic summary st
 ### Correlation Exploration:
 - Playtime at review vs votes_up (users voting on a review)
 - Playtime at review vs voted_up (author voting on game)
-+--------------------+---------------+--------+
+
 |                game|at_review_hours|voted_up|
-+--------------------+---------------+--------+
-|Sid Meier's Civil...|          81336|       1|
-|     Team Fortress 2|          79609|       1|
-|     Team Fortress 2|          66027|       1|
-|    Counter-Strike 2|          64963|       1|
-|Half-Life Deathma...|          61516|       1|
-|    Counter-Strike 2|          60231|       1|
-|Sid Meier's Civil...|          59038|       1|
-|       Day of Defeat|          59005|       0|
-|         Garry's Mod|          58742|       1|
-|Sid Meier's Civil...|          57197|       1|
-+--------------------+---------------+--------+
+|--------------------|---------------|--------|
+|     Team Fortress 2|          79609|    true|
+|     Team Fortress 2|          66027|    true|
+|    Counter-Strike 2|          64963|    true|
+|Half-Life Deathma...|          61516|    true|
+|    Counter-Strike 2|          60231|    true|
+|Sid Meier's Civil...|          59038|    true|
+|       Day of Defeat|          59005|   false|
+|         Garry's Mod|          58742|    true|
+|Sid Meier's Civil...|          57197|    true|
+|Sid Meier's Civil...|          53351|    true|
+
+
 only showing top 10 rows
 - (Playtime forever - playtime at review) vs voted_up (author voting on game)
   ![Playtime After Reviewing vs. Review Vote](https://github.com/user-attachments/assets/78b56bc0-29e3-4a52-b946-bf2509e0a493)
