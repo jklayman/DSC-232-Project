@@ -18,23 +18,49 @@ Our dataset handling presented significant performance challenges:
 - Performance Bottleneck: Processing times were extremely slow due to the massive data volume
 - Conversion Solution: Implemented CSV to Parquet conversion to address performance issues
   - Parquet format delivers 25-40x faster processing speeds
-  - Successfully reduced file size from 50GB to 20GB (60% reduction)
 
 ### Enhanced Processing Strategy
 To handle the remaining data volume efficiently:
 
 - Converting all data to Parquet format for optimized columnar storage
 - Implementing targeted preprocessing to reduce dataset size further:
-  - Removing reviews containing only emojis
-  - Filtering out reviews with ASCII art
 - Maximizing cluster resources by configuring for maximum memory and cores
 
-## **Preprocessing** *done*
+## Dataset Information
+- 113m rows, 24 columns
+- Columns:
+  - recommendationid: The unique ID of the recommendation
+  - appid: The unique app ID for every app on Steam
+  - game: The game name corresponding to the appid
+  - author_steamid: The user's SteamID
+  - author_num_games_owned: Number of games owned by the user
+  - author_num_reviews: Number of reviews written by the user
+  - author_playtime_forever: Lifetime playtime tracked in this app (minutes)
+  - author_playtime_last_two_weeks: Playtime tracked in the past two weeks for this app
+  - author_playtime_at_review: Playtime when the review was written
+  - author_last_played: Time for when the user last played
+  - language: Language the user indicated when authoring the review
+  - review: Text of written review
+  - timestamp_created: Date the review was created (unix timestamp)
+  - timestamp_updated: Date the review was last updated (unix timestamp)
+  - voted_up: True means it was a positive recommendation
+  - votes_up: The number of users that found this review helpful
+  - votes_funny: The number of users that found this review funny
+  - weighted_vote_score: Helpfulness score
+  - comment_count: Number of comments posted on this review
+  - steam_purchase: True if the user purchased the game on Steam
+  - received_for_free: True if the user checked a box saying they got the app for free
+  - written_during_early_access: True if the user posted this review while the game was in Early Access
+  - hidden_in_steam_china: True if invisible in China
+  - steam_china_location: Location in China (mostly null values)
+- Very few missing data points except for steam_china_location
 
-- Send all characters to lower
-- Drop irrelevant features
-- Drop all languages except English, Russian, and Simplified Chinese
-- Translate all foreign languages into English
+## **Preprocessing** *done*
+- Dropped empty reviews and emoji/ASCII reviews
+- Dropped irrelevant features
+- Dropped all languages except English due to API limitations on translate package
+- Sent all characters to lower
+- Converted playtime to hours
 
 ### Word Embedding
 - Learns from context, less preprocessing needed
@@ -58,9 +84,9 @@ To get basic summary statistics, we can use `describe()` to get basic summary st
 
 ### Non-Numerical Feature Exploration
 
-- Average review length (grouped by language) *done*
-- Average number of games owned *done*
-- Number of games reviewed *done*
+- Average review length (grouped by language) 236 characters
+- Average number of games owned: 145.9
+- Number of games reviewed: 96393
   
 ### Correlation Exploration:
 - Playtime at review vs votes_up (users voting on a review)
