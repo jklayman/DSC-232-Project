@@ -130,3 +130,6 @@ To handle the remaining data volume efficiently:
 ## **Possible Models for Sentiment Analysis:**
 - Word embedding using word2vec with logistic regression (less heavy preprocessing due to preserving semantics)
 - Term frequency using TFIDF and random forests (heavy preprocessing)
+
+- Number of voted down reviews: 6,256,826
+- Number of voted up reviews: 30,904,853
