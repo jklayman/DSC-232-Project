@@ -120,6 +120,7 @@ To handle the remaining data volume efficiently:
   ![Review Length vs. Review Vote](https://github.com/user-attachments/assets/21fd2432-2479-454e-8216-4e41cf4b30b3)
 
 - Review Length vs Community Votes
+  
   ![Review Length vs. Review Upvotes](https://github.com/user-attachments/assets/a58754d8-05b2-4c50-b258-51fb2a6cc630)
 
 
