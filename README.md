@@ -118,8 +118,9 @@ To handle the remaining data volume efficiently:
 - Review length vs voted_up (author voting on game)
   ![Review Length vs. Review Vote](https://github.com/user-attachments/assets/21fd2432-2479-454e-8216-4e41cf4b30b3)
 
-- Review length vs playtime vs votes_up (users voting on a review)
-  ![Review Length vs. Review Upvotes](https://github.com/user-attachments/assets/b6298567-b4d1-4fe7-aaed-41126ee0cddc)
+- Review length vs votes_up (users voting on a review)
+  ![Review Length vs. Review Upvotes](https://github.com/user-attachments/assets/9cfe2d9d-3c06-4f35-b618-bdfbde696f2c)
+
 
 ## **Possible Models for Sentiment Analysis:**
 - Word embedding using word2vec with logistic regression (less heavy preprocessing due to preserving semantics)
