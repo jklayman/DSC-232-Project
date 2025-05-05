@@ -84,7 +84,10 @@ To handle the remaining data volume efficiently:
 ### Numerical Feature Exploration
 
 - Average review length: 321.19 characters
+  ![Review Length](https://github.com/user-attachments/assets/5c523eeb-0f21-4d0a-a409-a0db9561f1a5)
+
 - Average number of games owned: 171.65
+- 
 - Number of games reviewed: 94159
 
 - number of reviews per game
@@ -119,7 +122,8 @@ To handle the remaining data volume efficiently:
   ![Review Length vs. Review Vote](https://github.com/user-attachments/assets/21fd2432-2479-454e-8216-4e41cf4b30b3)
 
 - Review length vs votes_up (users voting on a review)
-  ![Review Length vs. Review Upvotes](https://github.com/user-attachments/assets/9cfe2d9d-3c06-4f35-b618-bdfbde696f2c)
+  ![Review Length vs. Review Upvotes](https://github.com/user-attachments/assets/a58754d8-05b2-4c50-b258-51fb2a6cc630)
+
 
 
 ## **Possible Models for Sentiment Analysis:**
