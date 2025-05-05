@@ -83,7 +83,7 @@ To handle the remaining data volume efficiently:
 
 ### Numerical Feature Exploration
 
-- Average review length (grouped by language) 321.19 characters
+- Average review length: 321.19 characters
 - Average number of games owned: 171.65
 - Number of games reviewed: 94159
 
