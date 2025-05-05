@@ -55,7 +55,7 @@ To handle the remaining data volume efficiently:
   - steam_china_location: Location in China (mostly null values)
 - Very few missing data points except for steam_china_location
 
-## **Preprocessing** *done*
+## **Preprocessing**
 - Dropped empty reviews and emoji/ASCII reviews
 - Dropped irrelevant features
 - Dropped all languages except English due to API limitations on translate package
@@ -94,7 +94,6 @@ To handle the remaining data volume efficiently:
 - Overall correlation between each feature
   ![All Features Correlation Matrix](https://github.com/user-attachments/assets/d97fafad-d89f-4547-910e-cf38533df97b)
 
-- Playtime at review vs votes_up (users voting on a review)
 - Playtime at review vs voted_up (author voting on game)
 
 |                game|at_review_hours|voted_up|
