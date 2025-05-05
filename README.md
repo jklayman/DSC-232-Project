@@ -116,7 +116,8 @@ To handle the remaining data volume efficiently:
   ![Games Owned vs. Reviews Written](https://github.com/user-attachments/assets/d41c6d10-df4f-4162-8d3a-47ec809bdb22)
 
 - (Playtime forever - playtime at review) vs voted_up (author voting on game)
-  ![Playtime After Reviewing vs. Review Vote](https://github.com/user-attachments/assets/78b56bc0-29e3-4a52-b946-bf2509e0a493)
+  ![Playtime After Review vs. Review Vote](https://github.com/user-attachments/assets/efa0566f-f7b8-4232-9ae8-0b78cc777c97)
+
   
 - Review length vs voted_up (author voting on game)
   ![Review Length vs. Review Vote](https://github.com/user-attachments/assets/21fd2432-2479-454e-8216-4e41cf4b30b3)
