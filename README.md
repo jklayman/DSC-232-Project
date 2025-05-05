@@ -87,7 +87,8 @@ To handle the remaining data volume efficiently:
   ![Review Length](https://github.com/user-attachments/assets/5c523eeb-0f21-4d0a-a409-a0db9561f1a5)
 
 - Average number of games owned: 171.65
-- 
+  ![Games Owned](https://github.com/user-attachments/assets/5e0bdd5d-06c2-4742-9fd6-6872d0752895)
+
 - Number of games reviewed: 94159
 
 - number of reviews per game
