@@ -13,6 +13,7 @@ For transferring our 50gb file, we could not use direct upload due to size limit
 ### Large Dataset Management
 
 Our dataset handling presented significant performance challenges:
+
 - Size Challenge: The original CSV file (50GB) required maxing out cluster configurations
 - Performance Bottleneck: Processing times were extremely slow due to the massive data volume
 - Conversion Solution: Implemented CSV to Parquet conversion to address performance issues
@@ -20,6 +21,7 @@ Our dataset handling presented significant performance challenges:
 
 ### Enhanced Processing Strategy
 To handle the remaining data volume efficiently:
+
 - Converting all data to Parquet format for optimized columnar storage
 - Implementing targeted preprocessing to reduce dataset size further:
 - Maximizing cluster resources by configuring for maximum memory and cores
@@ -80,22 +82,22 @@ To handle the remaining data volume efficiently:
 ## **Feature Exploration**
 
 ### Numerical Feature Exploration
-- Number of Games Reviewed: 94159
+- Number of games reviewed: 94159
   
-- Number of Reviews per Game
+- number of reviews per game
   ![Top 10 Reviewed Games](https://github.com/user-attachments/assets/c24b6192-fbcd-4943-bbdb-a2b726df686a)
     
-- Average Review Length: 321.19 Characters
+- Average review length: 321.19 characters
   ![Review Length](https://github.com/user-attachments/assets/5c523eeb-0f21-4d0a-a409-a0db9561f1a5)
 
-- Average Number of Games Owned: 171.65
+- Average number of games owned: 171.65
   ![Games Owned](https://github.com/user-attachments/assets/5e0bdd5d-06c2-4742-9fd6-6872d0752895)
 
 ### Correlation Exploration:
-- Overall Correlation Between Each Feature
+- Overall correlation between each feature
   ![All Features Correlation Matrix](https://github.com/user-attachments/assets/d97fafad-d89f-4547-910e-cf38533df97b)
 
-- Playtime at Review vs Author's Vote
+- Playtime at review vs voted_up (author voting on game)
 
 |                game|at_review_hours|voted_up|
 |--------------------|---------------|--------|
@@ -110,16 +112,17 @@ To handle the remaining data volume efficiently:
 |Sid Meier's Civil...|          57197|    true|
 |Sid Meier's Civil...|          53351|    true|
 
-- Games Owned vs Reviews Written
+- Number of games owned vs number of reviews written
   ![Games Owned vs. Reviews Written](https://github.com/user-attachments/assets/d41c6d10-df4f-4162-8d3a-47ec809bdb22)
 
-- Playtime After Review vs Author's Vote
+- (Playtime forever - playtime at review) vs voted_up (author voting on game)
   ![Playtime After Review vs. Review Vote](https://github.com/user-attachments/assets/efa0566f-f7b8-4232-9ae8-0b78cc777c97)
+
   
-- Review Length vs Author's Vote
+- Review length vs voted_up (author voting on game)
   ![Review Length vs. Review Vote](https://github.com/user-attachments/assets/21fd2432-2479-454e-8216-4e41cf4b30b3)
 
-- Review Length vs Community Votes
+- Review length vs votes_up (users voting on a review)
   ![Review Length vs. Review Upvotes](https://github.com/user-attachments/assets/a58754d8-05b2-4c50-b258-51fb2a6cc630)
 
 
