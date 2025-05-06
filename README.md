@@ -54,25 +54,26 @@ To handle the remaining data volume efficiently:
 - Very few missing data points except for steam_china_location
 
 ## **Preprocessing**
-- Dropped empty reviews and emoji/ASCII reviews
 - Dropped irrelevant features
+- Dropped empty reviews and emoji/ASCII reviews
 - Dropped all languages except English due to API limitations on translate package
 - Sent all characters to lower
-- Dropped discrepancies in forever_playtime and playtime_at_review (only using rows with forever_playtime > playtime at review)
+- Converted selected columns to optimized integer types
 - Converted playtime to hours
+- Dropped discrepancies in forever_playtime and playtime_at_review (only using rows with forever_playtime > playtime at review)
     
 ## **Feature Exploration**
 
 ### Numerical Feature Exploration
-- Number of Games Reviewed: 94159
+- Number of Games Reviewed: 94164
   
 - Number of Reviews per Game
   ![Top 10 Reviewed Games](https://github.com/user-attachments/assets/c24b6192-fbcd-4943-bbdb-a2b726df686a)
     
-- Average Review Length: 321.19 Characters
+- Average Review Length: 321.23 Characters
   ![Review Length](https://github.com/user-attachments/assets/5c523eeb-0f21-4d0a-a409-a0db9561f1a5)
 
-- Average Number of Games Owned: 171.65
+- Average Number of Games Owned: 171.70
   ![Games Owned](https://github.com/user-attachments/assets/5e0bdd5d-06c2-4742-9fd6-6872d0752895)
 
 ### Correlation Exploration:
