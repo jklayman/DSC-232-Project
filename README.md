@@ -126,6 +126,7 @@ As we continued to compare features to look for correlations, we began to suspec
 ## **Possible Models for Sentiment Analysis:**
 ### Word Embedding using word2vec + Logistic Regression
 Learns from context and semantic relationships in text. Requires less preprocessing to preserve meaning.
+
 Preprocessing Steps:
 - Strip whitespace
 - Lightly strip punctuation
@@ -135,6 +136,7 @@ Preprocessing Steps:
   
 ### Term Frequency using TFIDF + Random Forest
 Converts text into numerical features based on term importance. Requires heavy preprocessing to reduce noise and dimensionality.
+
 Preprocessing Steps:
 - Strip punctuation
 - Strip special characters
