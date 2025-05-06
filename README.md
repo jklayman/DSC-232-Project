@@ -120,6 +120,7 @@ To handle the remaining data volume efficiently:
 As we continued to compare features to look for correlations, we began to suspect they would be few and far between. Once we made the correlation matrix of all features, we knew for certain that there was virtually no correlation between any of the separate features (excluding playtime features). This meant that the models we planned to make would rely very heavily on the feature extraction and sentiment analysis conducted on the text of the reviews. 
 
 ### Applicable to both models:
+- Number of vited up reviews: 30,904,853
 - Number of voted down reviews: 6,256,826
 
 ## **Possible Models for Sentiment Analysis:**
@@ -140,5 +141,3 @@ Preprocessing Steps:
 - Full tokenization
 - Remove stopwords
 - Apply stemming/lemmatization
-
-- Number of voted up reviews: 30,904,853
