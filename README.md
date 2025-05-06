@@ -60,22 +60,6 @@ To handle the remaining data volume efficiently:
 - Sent all characters to lower
 - Dropped discrepancies in forever_playtime and playtime_at_review (only using rows with forever_playtime > playtime at review)
 - Converted playtime to hours
-
-### Word Embedding
-- Learns from context, less preprocessing needed
-  - Strip whitespace
-  - Lightly strip punctuation
-  - Light tokenization
-  - Keep stopwords
-  - Avoid stemming/lemmatization
-    
-### Term Frequency
-- Heavy preprocessing needed
-  - Strip punctuation
-  - Strip special characters
-  - Full tokenization
-  - Remove stopwords
-  - Stemming/lemmatization
     
 ## **Feature Exploration**
 
@@ -127,8 +111,23 @@ To handle the remaining data volume efficiently:
 
 
 ## **Possible Models for Sentiment Analysis:**
-- Word embedding using word2vec with logistic regression (less heavy preprocessing due to preserving semantics)
-- Term frequency using TFIDF and random forests (heavy preprocessing)
+### Word Embedding using word2vec + Logistic Regression
+Learns from context and semantic relationships in text. Requires less preprocessing to preserve meaning.
+Preprocessing Steps:
+- Strip whitespace
+- Lightly strip punctuation
+- Light tokenization
+- Keep stopwords
+- Avoid stemming/lemmatization
+  
+### Term Frequency using TFIDF + Random Forest
+Converts text into numerical features based on term importance. Requires heavy preprocessing to reduce noise and dimensionality.
+Preprocessing Steps:
+- Strip punctuation
+- Strip special characters
+- Full tokenization
+- Remove stopwords
+- Apply stemming/lemmatization
 
 ### Applicable to both models:
 - Number of voted down reviews: 6,256,826
