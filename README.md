@@ -116,6 +116,12 @@ To handle the remaining data volume efficiently:
 - Games Owned vs Reviews Written
   ![Games Owned vs. Reviews Written](https://github.com/user-attachments/assets/d41c6d10-df4f-4162-8d3a-47ec809bdb22)
 
+## Postprocessing Thoughts
+As we continued to compare features to look for correlations, we began to suspect they would be few and far between. Once we made the correlation matrix of all features, we knew for certain that there was virtually no correlation between any of the separate features (excluding playtime features). This meant that the models we planned to make would rely very heavily on the feature extraction and sentiment analysis conducted on the text of the reviews. 
+
+### Applicable to both models:
+- Number of voted down reviews: 6,256,826
+
 ## **Possible Models for Sentiment Analysis:**
 ### Word Embedding using word2vec + Logistic Regression
 Learns from context and semantic relationships in text. Requires less preprocessing to preserve meaning.
@@ -135,6 +141,4 @@ Preprocessing Steps:
 - Remove stopwords
 - Apply stemming/lemmatization
 
-### Applicable to both models:
-- Number of voted down reviews: 6,256,826
 - Number of voted up reviews: 30,904,853
