@@ -77,9 +77,6 @@ To handle the remaining data volume efficiently:
   ![Games Owned](https://github.com/user-attachments/assets/5e0bdd5d-06c2-4742-9fd6-6872d0752895)
 
 ### Correlation Exploration:
-- Overall Correlation Between Each Feature
-  ![All Features Correlation Matrix](https://github.com/user-attachments/assets/d97fafad-d89f-4547-910e-cf38533df97b)
-
 - Playtime at Review vs Author's Vote
 
 |                game|at_review_hours|voted_up|
@@ -95,13 +92,9 @@ To handle the remaining data volume efficiently:
 |Sid Meier's Civil...|          57197|    true|
 |Sid Meier's Civil...|          53351|    true|
 
-- Games Owned vs Reviews Written
-  ![Games Owned vs. Reviews Written](https://github.com/user-attachments/assets/d41c6d10-df4f-4162-8d3a-47ec809bdb22)
-
 - Playtime After Review vs Author's Vote
   ![Playtime After Review vs. Review Vote](https://github.com/user-attachments/assets/efa0566f-f7b8-4232-9ae8-0b78cc777c97)
 
-  
 - Review Length vs Author's Vote
   ![Review Length vs. Review Vote](https://github.com/user-attachments/assets/21fd2432-2479-454e-8216-4e41cf4b30b3)
 
@@ -109,7 +102,19 @@ To handle the remaining data volume efficiently:
   
   ![Review Length vs. Review Upvotes](https://github.com/user-attachments/assets/a58754d8-05b2-4c50-b258-51fb2a6cc630)
 
+- Received for Free vs Voted Up by Author
+  
+  ![Received for Free vs Voted Up by Author](https://github.com/user-attachments/assets/2834816e-6c2c-465e-8a86-d92f76c5f70a)
 
+- Early Access vs Voted Up by Author
+  
+  ![Early Access vs Voted Up by Author](https://github.com/user-attachments/assets/0d25699f-1b9d-4683-a146-4c84f2f7f16d)
+
+- Overall Correlation Between Each Feature
+  ![All Features Correlation Matrix](https://github.com/user-attachments/assets/d97fafad-d89f-4547-910e-cf38533df97b)
+
+- Games Owned vs Reviews Written
+  ![Games Owned vs. Reviews Written](https://github.com/user-attachments/assets/d41c6d10-df4f-4162-8d3a-47ec809bdb22)
 
 ## **Possible Models for Sentiment Analysis:**
 ### Word Embedding using word2vec + Logistic Regression
