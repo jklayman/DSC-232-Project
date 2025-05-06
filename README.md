@@ -3,8 +3,11 @@
 
 ### Group Members
 Timothy Chang
+
 Julia Klayman
+
 David Lightfoot
+
 Tristan Roman
 
 
