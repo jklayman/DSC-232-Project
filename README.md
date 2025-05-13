@@ -1,10 +1,8 @@
-# PRE-PROCESSING
-
 # Model 1: TF-IDF
 
 Our first model will be a TF-IDF model, which takes the frequency of the tokens within the reviews and creates numerical features that correspond to importance. We will be using a random forest classifier. 
 
-### PRE-PROCESSING
+### Pre-Processing
 To turn the review text into usable data, we applied a regex tokenizer to remove special characters and split the bodies into individual words. Then we employed a basic stop word remover to discard words that don't naturally hold meaning. Lastly, we lemmatized the words to better group tokens with similar meaning. 
 
 ### Model Results
