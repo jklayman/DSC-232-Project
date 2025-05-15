@@ -6,12 +6,26 @@ Our first model will be a TF-IDF model, which takes the frequency of the tokens 
 To turn the review text into usable data, we applied a regex tokenizer to remove special characters and split the bodies into individual words. Then we employed a basic stop word remover to discard words that don't naturally hold meaning. Lastly, we lemmatized the words to better group tokens with similar meaning. 
 
 ### Model Results
-Our initial pass of the model gave us a training error of 0.7741 and a test error of 0.7747. While the closeness of the accuracies indicated our model wasn't over or underfitted, this was unideal since the proportion of positive reviews in our data was around 0.83, and thus our classifier performed worse than one that predicted a positive review every time. This could be due to a couple of factors:
+Our initial pass of the model gave us a training error of 0.7741 and a test error of 0.7747. The closeness of the accuracies was encouraging, but the low value was unideal since the proportion of positive reviews in our data was around 0.83. This meant that our classifier was underfitted, and performed worse than one that predicted a positive review every time. This could be due to a couple of factors:
 - Our lemmatization could have been weak, so the tokens were improperly grouped. We thought about using POS tagging to to establish tokens' parts of speech, allowing for lemmatization to pay attention to sentence structure, but had difficulty running that operation in the notebook.
 - Our model only used 50 trees, which could limit the fitting of the model
 - The 5:1 imbalance between the two classes could be biasing our model to predict more positive than it should, we could over/undersample to get a better sample of negative reviews, or use SMOTE
-- TF-IDF does not have context, limiting its ability to predict sentiment. This is ultimately why we decided to create a second model on Word2Vec. 
 
+
+- TF-IDF does not have context, limiting its ability to predict sentiment
+
+### Iterations: Hyperparameter Tuning
 Improvement Strategies: POS tagging to increase lemmatization, hyperparameter tuning (number of trees, max depth of trees)
 
-# Model 2: Word2Vec
+We decided to work with our hyperparameters, iteratively training models with differing values. For our TF-IDF algorithm, we wanted to limit the max number of features. We also discovered Weighted Class TF-IDF, which is meant to be used on imbalanced datasets like ours. 
+
+We also wanted to tune the random forest hyperparameters, specifically the number of trees and the max depth of the trees. 
+
+We ran nested loops to train multiple models to compare their accuracies. The graph below details how our training and test accuracy differed between models. 
+
+{{insert graph here}}
+
+[[insert analysis of hyperparameter tuning here]]
+
+### Next Models:
+Due to the context and sentiment lost in our TF-IDF model, we decided that a model that focuses on sentiment analysis would be ideal to analyze review text and determine whether the author liked the game they reviewed. We decided on a pipeline of a Word2Vec model and a logistic regression classifier. 
