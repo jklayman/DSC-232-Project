@@ -19,7 +19,7 @@ We also wanted to tune the random forest hyperparameters, specifically the numbe
 
 We ran nested loops to train multiple models to compare their accuracies. The graph below details how our training and test accuracy differed between models. 
 
-Our first tune was on the number of features taken in by our pipeline. We tested on 50, 1000, 2000, 5000, and 10000 features and found that 5000 features gave us the best AUC. 
+Our first tune was on the number of features taken in by our pipeline. We tested on 50, 1000, 2000, 5000, and 10000 features and found that 5000 features gave us the best AUC without diminishing returns. 
 ![image](https://github.com/user-attachments/assets/0d1e143d-002a-42ae-ab20-0b8853bc554b)
 
 Next, we wanted to tune the number of trees in our random forest. Using the 5000 max features from earlier, we iterated through 50, 100, 150, 250, and 400 trees to look for differences. 
