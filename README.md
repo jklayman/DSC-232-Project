@@ -31,11 +31,9 @@ Next, we wanted to tune the number of trees in our random forest. Using the 5000
 
 We see above that the model is generalizing even better with additonal trees and is not overfitting because our AUC and accuracy for training and testing are both high.
 
-Lastly, we tuned the max depth of each tree, iterating through [x,x,x,x]. 
+Lastly, we attempted to tune the max depth of each tree. Unfortunately, even with a heavy downsample of 20% of the original data, our machine ran out of space trying to make its way through 400 trees of max depth 9. However, we were able to make trees with 5 and 7 max depth, with 7 having a higher AUC than 5. 
 
-[[insert analysis of hyperparameter tuning here]]
-
-At the conclusion of our parameter tuning for the TF-IDF/Random Forest, we ended at 5000 number of features, 400 trees, and X tree depth. We theorize additonal computation in the number of trees parameter can yield a more peformant model.
+At the conclusion of our parameter tuning for the TF-IDF/Random Forest, we ended at 5000 number of features, 400 trees, and 7 tree depth. We theorize additonal computation in the number of trees parameter can yield a more peformant model, but would require either more computing power than we have access to or an unacceptable loss of data. 
 
 ### Next Models:
 Due to the context and sentiment lost in our TF-IDF model, we decided that a model that focuses on sentiment analysis would be ideal to analyze review text and determine whether the author liked the game they reviewed. We decided on a pipeline of a Word2Vec model and a logistic regression classifier. 
