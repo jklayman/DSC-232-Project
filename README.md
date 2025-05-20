@@ -1,15 +1,5 @@
 # DSC 232R Group Project
 
-### Group Members
-Timothy Chang
-
-Julia Klayman
-
-David Lightfoot
-
-Tristan Roman
-
-
 ### Introduction to Our Project
 Why was it chosen? Why is it cool? Dicuss the general/broader impact of having a good predictive mode. i.e. why is this important?
 
@@ -30,8 +20,21 @@ This is where you will discuss the why, and your interpretation and your though 
 This is where you do a mind dump on your opinions and possible future directions. Basically what you wish you could have done differently. Here you close with final thoughts.
 
 ### Statement of Collaboration
-This is a statement of contribution by each member. This will be taken into consideration when making the final grade for each member in the group. Did you work as a team? was there a team leader? project manager? coding? writer? etc. Please be truthful about this as this will determine individual grades in participation. There is no job that is better than the other. If you did no code but did the entire write up and gave feedback during the steps and collaborated then you would still get full credit. If you only coded but gave feedback on the write up and other things, then you still get full credit. If you managed everyone and the deadlines and setup meetings and communicated with teaching staff only then you get full credit. Every role is important as long as you collaborated and were integral to the completion of the project. If the person did nothing. they risk getting a big fat 0. Just like in any job, if you did nothing, you have the risk of getting fired. Teamwork is one of the most important qualities in industry and academia!
-Format: Start with Name: Title: Contribution. If the person contributed nothing then just put in writing: Did not participate in the project.
+Name: Timothy Chang
+Title: 
+Contribution:
+
+Name: Julia Klayman
+Title:
+Contribution:
+
+Name: David Lightfoot
+Title: 
+Contribution:
+
+Name: Tristan Roman
+Title: 
+Contribution: 
 
 ### Final Model and Results Summary
 Final Model and Final Results Summary
