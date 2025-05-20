@@ -22,12 +22,18 @@ We ran nested loops to train multiple models to compare their accuracies. The gr
 Our first tune was on the number of features taken in by our pipeline. We tested on 50, 1000, 2000, 5000, and 10000 features and found that 5000 features gave us the best AUC without diminishing returns. 
 ![image](https://github.com/user-attachments/assets/0d1e143d-002a-42ae-ab20-0b8853bc554b)
 
-Next, we wanted to tune the number of trees in our random forest. Using the 5000 max features from earlier, we iterated through 50, 100, 150, 250, and 400 trees to look for differences. 
+We see above that the model is generalizing well and not overfitting because our AUC for training and testing are both high.
 
+Next, we wanted to tune the number of trees in our random forest. Using the 5000 max features from earlier, we iterated through 50, 100, 150, 250, and 400 trees to look for differences. We employed an additional metric, specifically model accuracy, as a way to define our label prediction score.
+![image](https://github.com/user-attachments/assets/95d29a5b-c4d2-4f85-a19d-1117f719e7e1)
 
-Lastly, we tuned the max depth of each tree using the above parameters. 
+We see above that the model is generalizing even better with additonal trees and is not overfitting because our AUC and accuracy for training and testing are both high.
+
+Lastly, we tuned the max depth of each tree, iterating through [x,x,x,x]. 
 
 [[insert analysis of hyperparameter tuning here]]
+
+At the conclusion of our parameter tuning for the TF-IDF/Random Forest, we ended at 5000 number of features, 400 trees, and X tree depth. We theorize additonal computation in the number of trees parameter can yield a more peformant model.
 
 ### Next Models:
 Due to the context and sentiment lost in our TF-IDF model, we decided that a model that focuses on sentiment analysis would be ideal to analyze review text and determine whether the author liked the game they reviewed. We decided on a pipeline of a Word2Vec model and a logistic regression classifier. 
