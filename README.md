@@ -35,8 +35,14 @@ Lastly, we attempted to tune the max depth of each tree. Unfortunately, even wit
 
 ![image](https://github.com/user-attachments/assets/d65fc79a-1ae8-4410-a475-d25b540132bd)
 
-
 At the conclusion of our parameter tuning for the TF-IDF/Random Forest, we ended at 5000 number of features, 400 trees, and 7 tree depth. We theorize additonal computation in the number of trees parameter can yield a more peformant model, but would require either more computing power than we have access to or an unacceptable loss of data. 
+
+Our ground truths:
+
+![image](https://github.com/user-attachments/assets/548f22a0-6528-4d7d-81f8-dc5c978b3bbc)
+
+![image](https://github.com/user-attachments/assets/c8f572c7-8f54-41cc-b3dd-b4ba00202318)
+
 
 ### Next Models:
 Due to the context and sentiment lost in our TF-IDF model, we decided that a model that focuses on sentiment analysis would be ideal to analyze review text and determine whether the author liked the game they reviewed. We decided on a pipeline of a Word2Vec model and a logistic regression classifier. 
