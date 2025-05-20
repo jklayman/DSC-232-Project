@@ -46,7 +46,7 @@ This is where you will discuss the why, and your interpretation and your though 
 This is where you do a mind dump on your opinions and possible future directions. Basically what you wish you could have done differently. Here you close with final thoughts.
 
 ## Statement of Collaboration
-All work was completed collaboratively as a team, and no individual help a specific title or role.
+All work was completed collaboratively as a team, and no individual held a specific title or role.
 - Timothy Chang: 
 - Julia Klayman: 
 - David Lightfoot: 
