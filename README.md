@@ -37,5 +37,12 @@ Title:
 Contribution: 
 
 ### Final Model and Results Summary
-Final Model and Final Results Summary
-Include this in the last paragraph in D.
+### Model 2: Word2Vec
+Our second model will be a Word2Vec model, which captures semantic meaning and context from the review text by learning vector representations of words. These embeddings will then be used as features in a logistic regression classifier to predict whether the author liked the game.
+
+### Pre-Processing
+
+### Model Results
+
+### Iterations: Hyperparameter Tuning
+
