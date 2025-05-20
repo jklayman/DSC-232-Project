@@ -22,6 +22,8 @@ Initial attempts to process the full CSV file were limited by cluster performanc
 
 The dataset consists of approximately 113 million row and 24 columns, including game identifiers, user behavior metrics, playtime data, and free-form review text.
 
+### Feature Exploration and Visualization
+
 ### Pre-Processing
 Several cleaning and transformation steps were applied to get the dataset ready for modeling:
 - Non-English reviews were filtered out entirely to maintain consistency and avoid translation overhead.
