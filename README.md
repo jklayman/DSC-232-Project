@@ -1,4 +1,4 @@
-# Model 1: TF-IDF
+# Model 1: TF-IDF + Random Forest
 
 Our first model will be a TF-IDF model, which takes the frequency of the tokens within the reviews and creates numerical features that correspond to importance. We will be using a random forest classifier. 
 
