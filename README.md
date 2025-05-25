@@ -55,6 +55,10 @@ All work was completed collaboratively as a team, and no individual held a speci
 - Tristan Roman: 
 
 ## Final Model and Results Summary
+Our Dataset: https://www.kaggle.com/datasets/kieranpoc/steam-reviews/data
+
+Our Setup Requirements: 110 cores, 220GB memory per node
+
 ### Model 2: Word2Vec
 Our second model will be a Word2Vec model, which captures semantic meaning and context from the review text by learning vector representations of words. These embeddings will then be used as features in a logistic regression classifier to predict whether the author liked the game.
 
