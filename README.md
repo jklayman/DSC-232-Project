@@ -1,4 +1,5 @@
 Our Dataset: https://www.kaggle.com/datasets/kieranpoc/steam-reviews/data
+Our Setup Requirements: 110 cores, 220GB memory per node
 
 # DATA EXPLORATION
 
