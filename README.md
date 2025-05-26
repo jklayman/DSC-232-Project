@@ -1,6 +1,18 @@
 Our Dataset: https://www.kaggle.com/datasets/kieranpoc/steam-reviews/data
 
-Our Setup Requirements: 110 cores, 220GB memory per node
+# Enviromnent Setup
+
+Due to the large amount of data, we had to alter our setup accordingly. The code snippet below details our environmnent:
+```py
+sc = SparkSession.builder \
+    .appName("FastGroupByCount") \
+    .master("local[110]") \
+    .config("spark.driver.memory", "220g") \
+    .config("spark.sql.shuffle.partitions", "220") \
+    .config("spark.default.parallelism", "220") \
+    .getOrCreate()
+```
+We first configure Spark to run across 110 CPU cores. We allocated 220GB to the Spark driver, created 220 partitions for SQL shuffling, and the same amount for RDDs. 
 
 # DATA EXPLORATION
 
