@@ -2,7 +2,11 @@ Our Dataset: https://www.kaggle.com/datasets/kieranpoc/steam-reviews/data
 
 # Enviromnent Setup
 
-Due to the large amount of data, we had to alter our setup accordingly. The code snippet below details our environmnent:
+Due to the large amount of data, we had to alter our setup accordingly. 
+
+In our Jupyter session creation, we gave ourselves 110 cores, with 240GB per node. We used the base singularity file image `~/esolares/spark_py_latest_jupyter_dsc232r.sif` and `singularitypro`. 
+
+The code snippet below details our Spark Session environmnent:
 ```py
 sc = SparkSession.builder \
     .appName("FastGroupByCount") \
