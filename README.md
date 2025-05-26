@@ -2,7 +2,7 @@ Our Dataset: https://www.kaggle.com/datasets/kieranpoc/steam-reviews/data
 
 # Enviromnent Setup
 
-Due to the large amount of data, we had to alter our setup accordingly. 
+Due to the large amount of data, we had to alter our setup accordingly. We had to use a large amount of cores, with a large amount of memory allocated to them in order to process through 100 million rows of data. After trying multiple configurations of numbers, we ended with our configuration below. 
 
 In our Jupyter session creation, we gave ourselves 110 cores, with 240GB per node. We used the base singularity file image `~/esolares/spark_py_latest_jupyter_dsc232r.sif` and `singularitypro`. 
 
