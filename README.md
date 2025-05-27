@@ -36,9 +36,12 @@ These steps allowed us to reduce noise and streamine the data while preserving t
 
 ### Feature Exploration and Visualization
 
-We found there were a total of 94164 unique games that had reviews in our pre-processed dataset. Of those games, several were reviewed more than others, with a notable example being Counter-Strike 2, boasting over 1 million reviews to its name. The average review length was around 300 characters, but some reviewers waxed eloquent about their games for over 5000 characters. The distribution of review lengths was heavily right skewed, a trend which was mirrored in the amount of games owned by each reviewer. While the average number of games owned was around 170, some individuals owned over 5000 games. 
+We found there were a total of 94164 unique games that had reviews in our pre-processed dataset. Of those games, several were reviewed more than others, with a notable example being Counter-Strike 2, boasting over 1 million reviews to its name (Fig. 1). The average review length was around 300 characters, but some reviewers waxed eloquent about their games for over 5000 characters. The distribution of review lengths was heavily right skewed, a trend which was mirrored in the amount of games owned by each reviewer. While the average number of games owned was around 170, some individuals owned over 5000 games. 
 
 After diving into reviews, their lengths, and some characteristics about the reviewers, we decided to explore correlations between features. We analyzed authors' playtime when they reviewed the game, their playtime after they reviewed the game, how long their review was, whether the game was received for free, and whether or not the authors played the game in early access and compared those statistics to whether or not the author recommended the game. We made the discovery that there was little correlation between each of these features and the author's recommendation. To verify this, we created a comprehensive correlation matrix and visually examined it to look for notable correlation scores. Our figure revealed what we had already suspected--these categorical features had little to no correlation with each other, much less to the author's recommendation. With this in mind, we realized that if we decided to use these features in conjunction with the text of the review, any model would mostly or completely rely on the review body and would likely disregard any remaining features. As a result, we dropped these features and chose to create models that analyzed the text of the reviews. 
+
+<img src="https://github.com/user-attachments/assets/6c7f6d6b-d54c-47cf-9002-26de91e37902" width="500" height="300">
+
 
 ## Model 1: TF_IDF
 
