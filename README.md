@@ -95,9 +95,9 @@ This is where you will discuss the why, and your interpretation and your though 
 
 ### Feature Exploration and Visualization
 
-## Model 1: TF-IDF
+### Model 1: TF-IDF
 
-## Model 2: Word2Vec Embeddings/Logistic Regression
+### Model 2: Word2Vec Embeddings/Logistic Regression
 why:
 -We moved onto word embeddings as the richer semantic meanings held within the review text could posasibly drive classification accuracy up.
 -We chose logistic regression as it is well suited for text based sentiment analysis.
