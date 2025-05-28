@@ -130,12 +130,37 @@ _Fig. 2: Tuning the number of trees in the random forest_
 _Fig. 3: Tuning the depth of trees in the random forest_
 
 ## Model 2
+After the initial TF-IDF/Randomforest model, we chose to employ Word2Vev word embeddings/Logistic Regression in an effort to increase the accuracy. To begin, the global preprocessing detailed above was used in tandem with seperate model preprocessing shown below. We used seperate preprocessing for the word embeddings driven model because we wanted to preserve as much semantic meaning as possible.
+
+### Pre-Processing
+Several cleaning and transformation steps were applied to get the dataset ready for modeling:
+- Tokenization
+
+We then employed random undersampling for class balancing so that our resultant model is less biased. Ultimately, our model used X million positive and X million negative reviews for training. In the training phase, we used Word2Vec embeddings alongside a Logistic Regression classifier. We progressed with hyperparameter tuning on an even more downsampled dataset at 3 million positive and negative reviews for quicker tunes.
+
+### Word2Vec Parameter Tuning
+Word2Vec has a plethora of tuning possabilties, but we focused on the following high priority parameters:
+- vectorSize
+- minCount
+- windowSize
+
+After hyperparameter tuning, we chose [input final parameters]. We then ran the final model on the 14M row dataset.
+
+why[Delete]:
+-We moved onto word embeddings as the richer semantic meanings held within the review text could posasibly drive classification accuracy up.
+-We chose logistic regression as it is well suited for text based sentiment analysis.
+-We specifically chose to use a sepereate, reduced preprocessing for thw embeddings model due to requiring us to maintain as much of the original review as we could.
+-We underampled so that we would not have a postitive review bias within the model.
+-Further downsamplign was for faster hyperparamter tuning.
+-We employed hyperparameter tuning to make more accurate our model.
+-We retested on our full downsampled dataset to understand how well our tuned model performed.
 
 ## Results Section
 This will include the results from the methods listed above (C). You will have figures here about your results as well. No exploration of results is done here. This is mainly just a summary of your results. The sub-sections will be the same as the sections in your methods section.
 
 ## Discussion Section
 This is where you will discuss the why, and your interpretation and your though process from beginning to end. This will mimic the sections you have created in your methods section as well as new sections you feel you need to create. You can also discuss how believable your results are at each step. You can discuss any short comings. It's ok to criticize as this shows your intellectual merit, as to how you are thinking about things scientifically and how you are able to correctly scrutinize things and find short comings. In science we never really find the perfect solution, especially since we know something will probably come up int he future (i.e. donkeys) and mess everything up. If you do it's probably a unicorn or the data and model you chose are just perfect for each other!
+
 
 ### Initial Acquisition
 To support efficient processing of our large dataset, we first evaluated data formats and transfer methods. We selected the .csv.gz format for its compatibility with Spark and its ability to stream directly without decompression. This eliminated the need for storing redundant uncompressed copies and allowed faster load times.
@@ -166,6 +191,11 @@ After diving into reviews, their lengths, and some characteristics about the rev
 ## Model 1: TF_IDF
 
 We first chose to make a TF-IDF model, which would quantify the words of the review text and search for words that tended to appear more in positive reviews than negative reviews, and vice versa. We hoped that this model would reveal common buzzwords that were often used to either praise or criticize games. To prepare our data for this model, we tokenized the review text, removed common stopwords and special characters, and ran a simple lemmatizer to group words with similar roots. Then we split our data into training and test sets and got to training. We used a pipeline of TF-IDF and a random forest classifier for binary classification, trained the model on our training data, then evaluated it for AUC
+
+## Model 2: Word2Vec Embeddings/Logistic Regression
+
+We adopted a Word2Vec + Logistic Regression model to better capture the semantic richness of the review text, which we believed could enhance classification accuracy. Logistic regression was chosen for its effectiveness in sentiment analysis tasks. To preserve important linguistic context for the embeddings, we applied lighter preprocessing than in other models. Given the original class imbalance, we performed undersampling to reduce positive review bias, with additional downsampling to accelerate hyperparameter tuning. Tuning was used to optimize model performance, and we validated the final configuration on the full downsampled dataset to assess its effectiveness.
+
 
 ## Conclusion
 This is where you do a mind dump on your opinions and possible future directions. Basically what you wish you could have done differently. Here you close with final thoughts.
