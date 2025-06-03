@@ -32,7 +32,6 @@ What Tristan wrote: After the initial TF-IDF/random forest model, we chose to em
 This will include the results from the methods listed above (C). You will have figures here about your results as well. No exploration of results is done here. This is mainly just a summary of your results. The sub-sections will be the same as the sections in your methods section.
 
 # Need to finish
-### Preprocessing
 
 ### Feature Exploration and Visualization
 The preprocessed dataset contained 94,164 unique games with user reviews. Some games were reviewed far more frequently than others, with a noticeable concentration of reviews on top titles. Counter-Strike 2, for instance, accumulated over 1 million reviews, making it one of the more frequently reviewed games in the dataset (Fig. 1).
@@ -88,10 +87,10 @@ _Fig. 11: Tuning the depth of trees in the random forest_
 This is where you will discuss the why, and your interpretation and your though process from beginning to end. This will mimic the sections you have created in your methods section as well as new sections you feel you need to create. You can also discuss how believable your results are at each step. You can discuss any short comings. It's ok to criticize as this shows your intellectual merit, as to how you are thinking about things scientifically and how you are able to correctly scrutinize things and find short comings. In science we never really find the perfect solution, especially since we know something will probably come up int he future (i.e. donkeys) and mess everything up. If you do it's probably a unicorn or the data and model you chose are just perfect for each other!
 
 ### Initial Acquisition
-
+When stored as a .csv, our file was over 50GB in size. AS such, we chose to upload the dataset as a .csv.gz through Globus Connect Personal. Even after that and converting the file to Parquet format, the size remained enormous at 27GB. We leveraged the resources of the SDSC and PySpark in order to manage our data. 
 
 ### Pre-Processing
-
+At first, we wanted to translate the top three most used languages into English for use in our dataset. However, we ran into multiple issues with various Python packages, the most egregious of all being one that required a subscription in order to properly use. Since we were unable to find a sustainable translation library that fit our needs, we eventually settled for using only the reviews written in English as labeled by the dataset. 
 
 ### Feature Exploration and Visualization
 
