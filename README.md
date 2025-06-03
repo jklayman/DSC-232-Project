@@ -90,10 +90,21 @@ This is where you will discuss the why, and your interpretation and your though 
 When stored as a .csv, our file was over 50GB in size. AS such, we chose to upload the dataset as a .csv.gz through Globus Connect Personal. Even after that and converting the file to Parquet format, the size remained enormous at 27GB. We leveraged the resources of the SDSC and PySpark in order to manage our data. 
 
 ### Pre-Processing
-At first, we wanted to translate the top three most used languages into English for use in our dataset. However, we ran into multiple issues with various Python packages, the most egregious of all being one that required a subscription in order to properly use. Since we were unable to find a sustainable translation library that fit our needs, we eventually settled for using only the reviews written in English as labeled by the dataset. 
+We looked through the 24 different features and decided to drop columns that didn't seem like they would contribute to the polarity of a review. For instance, a feature that stated what part of China a review originated in was unlikely to be relevant, as would the number of readers who voted the review funny. After dropping irrelevant features, we were left with the following columns:
+
+- Number of games owned per author
+- Number of reviews written per author
+- Author's overall playtime
+- Author's playtime when writing the review
+- Whether the author recommended the game
+- How many readers found the review helpful
+- Whether the author received the game for free
+- Whether the review was written during early access
+
+At first, we wanted to translate the top three most used languages into English for use in our dataset. However, we ran into multiple issues with various Python packages, the most egregious of all being one that required a subscription in order to properly use. Since we were unable to find a sustainable translation library that fit our needs, we eventually settled for using only the reviews written in English as labeled by the dataset. Furthermore, we also removed any reviews made purely of special characters since they wouldn't contribute any meaning to our model. We looked through the playtimes of each review and found some inconsistencies between authors's playtime at review and their playtime overall. Specifically, some reviews had higher playtime at review than playtime overall, which didn't make sense. As such, we also removed those reviews. 
 
 ### Feature Exploration and Visualization
-
+After our preprocessing, we were left with approximately 36 million reviews to work with. We decided to examine author details such as how many games they owned and how long they played the game before reviewing because we suspected those features would have more influence on a review's polarity. However, after exploring the relationships between these features and whether the author recommended the game, we found that there was virtually no correlation between the difference in values and the proportions of authors who recommended the game. To confirm our suspicions, we created a large correlation matrix consisting of all the features we kept, looking for any sort of relationship between our features and the review polarity. The correlation matrix confirmed that there was virtually no correlation between our numerical features and our target feature, which meant that any moodel we made would almost entirely rely on the review text itself. With that in mind, we decided to drop all of our features except for the bodies of the reviews. 
 ### Model 1: TF-IDF
 
 ### Model 2: Word2Vec Embeddings/Logistic Regression
