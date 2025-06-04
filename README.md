@@ -22,17 +22,12 @@ Feature correlations were explored using variables such as playtime at review, p
 ### Model 1: TF-IDF/Random Forest
 The review text was tokenized, and common stopwords and special characters were removed. A simple lemmatizer was applied to group words with similar roots. The data was then split into training and test sets. A binary classification pipeline ws constructed using TF-IDF for feature extraction and a random forest classifier. The model was trained on the training set, and evaluation metrics, including AUC, were computed on both training and test data. Hyperparameter tuning was performed by iterating over the maximum number of TF-IDF features, the number of trees in the forest, and the maximum tree depth.
 
-# Need to finish
 ### Model 2: Word2Vec Embeddings/Logistic Regression
-The global preprocessing steps were applied along with additional preprocessing specific to this model. Review text was tokenized in preparation for embedding. Class balancing was performed using random undersampling to create a balanced training set of positive and negative reviews. A Word2Vec model was used to generate word embeddings, which were then used as input into a logisitic regression classifier. Hyperparameter tuning was conducted on a smaller subset of the data to improve efficiency. The tuning process focused on vectorSize, minCount, and windowSize, and the final model will use the selected parameters: vectorSize = [input], minCount = [input], and windowSize = [input]. The finalized model is applied to the full dataset for training and evaluation.
+Due to system limitations, we were unable to implement this model; however, the following outlines the approach we had planned. In addition to the global preprocessing steps, we intended to tokenize the review text in preparation for embedding. To address class imbalance, we would have applied random undersampling to create a balanced training set of positive and negative reviews. A Word2Vec model was planned to generate word embeddings from the tokenized text, which would then serve as input to a logisitic regression classifier.
 
-What Tristan wrote: After the initial TF-IDF/random forest model, we chose to employ Word2Vev word embeddings/logistic regression in an effort to increase the accuracy. To begin, the global preprocessing detailed above was used in tandem with seperate model preprocessing shown below. We used seperate preprocessing for the word embeddings driven model because we wanted to preserve as much semantic meaning as possible. Several cleaning and transformation steps were applied to get the dataset ready for modeling: Tokenization. We then employed random undersampling for class balancing so that our resultant model is less biased. Ultimately, our model used X million positive and X million negative reviews for training. In the training phase, we used Word2Vec embeddings alongside a Logistic Regression classifier. We progressed with hyperparameter tuning on an even more downsampled dataset at 3 million positive and negative reviews for quicker tunes. Word2Vec has a plethora of tuning possabilties, but we focused on the following high priority parameters: vectorSize, minCount, windowSize. After hyperparameter tuning, we chose [input final parameters]. We then ran the final model on the 14M row dataset.
+Hyperparameter tuning was to be performed on a smaller subset of the data to optimize for efficiency.The tuning process would have focused on selecting appropriate values for vectorSize, minCount, and windowSize, but the final values were not determined prior to the system outage. Once tuned, the finalized model would have been applied to the dataset for training and evaluation
 
 ## Results Section
-This will include the results from the methods listed above (C). You will have figures here about your results as well. No exploration of results is done here. This is mainly just a summary of your results. The sub-sections will be the same as the sections in your methods section.
-
-# Need to finish
-
 ### Feature Exploration and Visualization
 The preprocessed dataset contained 94,164 unique games with user reviews. Some games were reviewed far more frequently than others, with a noticeable concentration of reviews on top titles. Counter-Strike 2, for instance, accumulated over 1 million reviews, making it one of the more frequently reviewed games in the dataset (Fig. 1).
 <img src="https://github.com/user-attachments/assets/6c7f6d6b-d54c-47cf-9002-26de91e37902" width="1000">
@@ -66,6 +61,7 @@ To supplement these visual comparisons, a correlation matrix was generated to ex
 <img src="https://github.com/user-attachments/assets/d8b4731e-72a0-4af1-ad6c-8c7bab7c565c" width="1000">
 _Fig. 8: The correlation matrix between all the non-linguistic features._ 
 
+## Need to change the graphs
 ### Model 1: TF-IDF/Random Forest
 Hyperparameter tuning was conducted to improve the performance of the TF-IDF and random forest classification pipeline. The tuning process began with adjusting the number of features used by the HashingTF component. Several values were tested and compared to identify trends in AUC performance across diferent feature dimensions (Fig. 9).
 <img src="https://github.com/user-attachments/assets/5edf09dc-c1f6-4eb6-810b-4a26a5ab09be" width="1000">
@@ -79,43 +75,43 @@ Lastly, maximum tree depth was tuned to explore its effect on model generalizati
 <img src="https://github.com/user-attachments/assets/407e16fa-8749-47ac-8baf-e4519ebaaa93" width="1000">
 _Fig. 11: Tuning the depth of trees in the random forest_
 
-# Need to finish
+## Either delete this or talk about what we think the result would've been
 ### Model 2: Word2Vec Embeddings/Logistic Regression
 
-# Need to finish
 ## Discussion Section
 This is where you will discuss the why, and your interpretation and your though process from beginning to end. This will mimic the sections you have created in your methods section as well as new sections you feel you need to create. You can also discuss how believable your results are at each step. You can discuss any short comings. It's ok to criticize as this shows your intellectual merit, as to how you are thinking about things scientifically and how you are able to correctly scrutinize things and find short comings. In science we never really find the perfect solution, especially since we know something will probably come up int he future (i.e. donkeys) and mess everything up. If you do it's probably a unicorn or the data and model you chose are just perfect for each other!
 
 ### Initial Acquisition
-When stored as a .csv, our file was over 50GB in size. AS such, we chose to upload the dataset as a .csv.gz through Globus Connect Personal. Even after that and converting the file to Parquet format, the size remained enormous at 27GB. We leveraged the resources of the SDSC and PySpark in order to manage our data. 
+From the very beginning, the scale of our dataset forced us to think strategically about storage, transfer, and processing. The original .csv file clocked in at over 50GB, which made it immediately clear that traditional tools wouldn't cut it. We decided to compress the file into a .csv.gz format and use Globus Connect Personal for transfer, a choice driven not just by convenience, but by necessity. Transferring and storing files of this size through normal means would have been impractical, if not impossible, on personal machines or limited cloud resources. Even after converting the file to a more storage efficient Parquet format, the data still took up 27GB, reaffirming just how massive this dataset was.
+
+Given the scale, we knew early on that PySpark would be our best option for distrubuted processing. The SDSC Expanse Portal offered the kind of computational power we needed to make this even remotely feasible. We weren't just dealing with a storage problem, we were navigating infrastructure limitations, runtime constraints, and the very real risk of crashing or timing out. Working within these boundaries influenced everything we did from that point forward, from what models we could run to how much data we could include in tuning and evaluation. This set the tone for our entire project and ultimately shaped many of the decisions that followed.
 
 ### Pre-Processing
-We looked through the 24 different features and decided to drop columns that didn't seem like they would contribute to the polarity of a review. For instance, a feature that stated what part of China a review originated in was unlikely to be relevant, as would the number of readers who voted the review funny. After dropping irrelevant features, we were left with the following columns:
-
+Preprocessing was a critical stage where we had to make deliberate choices about what data was actually worth keeping. With 24 features available, our first step was to evaluate which ones were likely to provide meaningful signals about review polarity. Some columns, like the geographic origin of a reviewer or how many people marked a review as "funny", didn't seem likely to contribute much to our understanding of whether a review was positive or negative. We felt that keeping irrelevant features would just introduce noise, so we removed them and focused only on the variables we believed could capture user behavior or game experience more meaningfully. After narrowing things down, we were left with the following columns:
 - Number of games owned per author
 - Number of reviews written per author
 - Author's overall playtime
 - Author's playtime when writing the review
-- Whether the author recommended the game
+- Whether the autor recommended the game
 - How many readers found the review helpful
 - Whether the author received the game for free
 - Whether the review was written during early access
 
-At first, we wanted to translate the top three most used languages into English for use in our dataset. However, we ran into multiple issues with various Python packages, the most egregious of all being one that required a subscription in order to properly use. Since we were unable to find a sustainable translation library that fit our needs, we eventually settled for using only the reviews written in English as labeled by the dataset. Furthermore, we also removed any reviews made purely of special characters since they wouldn't contribute any meaning to our model. We looked through the playtimes of each review and found some inconsistencies between authors's playtime at review and their playtime overall. Specifically, some reviews had higher playtime at review than playtime overall, which didn't make sense. As such, we also removed those reviews. 
+Originally, we intended to include reviews written in the top three most used languages by translating them into English. This seemed like a reasonable way to expand our dataset while maintaining consistency in model input. However, we ran into significant obstacles with translation libraries. Many of the tools we tried were either unreliable or locked behind paywalls, which made this plan unsustainable. Eventually, we decided to filter out non-English reviews entirely and only use the ones already labeled as English by the dataset.
+
+We also took steps to improve text and numerical data quality. Some reviews consisted solely of special characters, which wouldn't contribute any useful semantic information, so we removed those. Additionally, we identified inconsistencies in the playtime data. Some reviews showed more playtime "at review" than in total, which obviously didn't make sense. These rows were likely corrupted or misrecorded, so we excluded them to prevent misleading patterns from entering the model. Ultimately, every choice we made during preprocessing came down to improving the reliability and interpretability of the data going into our models.
 
 ### Feature Exploration and Visualization
-After our preprocessing, we were left with approximately 36 million reviews to work with. We decided to examine author details such as how many games they owned and how long they played the game before reviewing because we suspected those features would have more influence on a review's polarity. However, after exploring the relationships between these features and whether the author recommended the game, we found that there was virtually no correlation between the difference in values and the proportions of authors who recommended the game. To confirm our suspicions, we created a large correlation matrix consisting of all the features we kept, looking for any sort of relationship between our features and the review polarity. The correlation matrix confirmed that there was virtually no correlation between our numerical features and our target feature, which meant that any moodel we made would almost entirely rely on the review text itself. With that in mind, we decided to drop all of our features except for the bodies of the reviews. 
+After our preprocessing, we were left with approximately 36 million reviews to work with. We decided to examine author details such as how many games they owned and how long they played the game before reviewing because we suspected those features would have more influence on a review's polarity. However, after exploring the relationships between these features and whether the author recommended the game, we found that there was virtually no correlation between the difference in values and the proportions of authors who recommended the game. To confirm our suspicions, we created a large correlation matrix consisting of all the features we kept, looking for any sort of relationship between our features and the review polarity. The correlation matrix confirmed that there was virtually no correlation between our numerical features and our target feature, which meant that any model we made would almost entirely rely on the review text itself. With that in mind, we decided to drop all of our features except for the bodies of the reviews. 
+
 ### Model 1: TF-IDF
 
 ### Model 2: Word2Vec Embeddings/Logistic Regression
-why:
--We moved onto word embeddings as the richer semantic meanings held within the review text could posasibly drive classification accuracy up.
--We chose logistic regression as it is well suited for text based sentiment analysis.
--We specifically chose to use a sepereate, reduced preprocessing for thw embeddings model due to requiring us to maintain as much of the original review as we could.
--We underampled so that we would not have a postitive review bias within the model.
--Further downsamplign was for faster hyperparamter tuning.
--We employed hyperparameter tuning to make more accurate our model.
--We retested on our full downsampled dataset to understand how well our tuned model performed.
+For our second model, we wanted to move beyond the limitations of TF-IDF by capturing the semantic depth of the review text. The idea was that word embeddings, specifically through Word2Vec, would allow us to leverage the context and relationships between words which is something we felt was important in understanding the tone and sentiment behind how users describe their experiences. We were especially drawn to the idea that certain expressions, even when phrased differently, could share similar embeddings and ultimately help the model generalize sentiment more accurately. Logistic regression felt like a natural fit here because it's efficient, interpretable, and it has consistently performed well in sentiment classification tasks, especially when paired with dense feature representations like embeddings.
+
+We also made a conscious decision to treat this model differently in terms of preprocessing. Unlike TF-IDF, where cleaning and simplification are often helpful, we felt that retaining more of the original review, like its vocabulary, phrasing, and quirks would preserve meaning in a way that embeddings could take advantage of. Our datatset was quite large, which posed a problem both in terms of training time and bias. There were significantly more positive reviews than negative pnes, and without correction, this would have skewed the model's predictions. To address this, we downsampled not just to balance the classes, but also to make hyperparameter tuning more manageable given the resource constraints.
+
+The plan was to tune hyperparameters like vector size, window size, and minimum word count on a smaller subset of the data, then apply those settings to a larger downsampled set for evaluation. We were genuinely curious whether this embedding based approach would outperform TF-IDF, especially in how it might pick up on subtle expressions of satisfaction or frustration. Unfortunately, the system failure halted this line of exploration before we could find out. That said, we still believe this direction had promise especially given how limiting sparse representations can be when dealing with emotionally nuanced or context rich language.
 
 # Need to finish
 ## Conclusion
@@ -128,18 +124,4 @@ All work was completed collaboratively as a team, and no individual held a speci
 - Julia Klayman: 
 - David Lightfoot: 
 - Tristan Roman: 
-
-# Need to finish
-## Final Model and Results Summary
-Our Dataset: https://www.kaggle.com/datasets/kieranpoc/steam-reviews/data
-
-Our Setup Requirements: 
-
-### Model 2: Word2Vec
-
-### Pre-Processing
-
-### Model Results
-
-### Iterations: Hyperparameter Tuning
 
