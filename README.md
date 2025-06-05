@@ -127,6 +127,12 @@ While this model gave us a solid foundation, it also came with limitations. One 
 
 Even so, the TF-IDF + Random Forest model served its purpose well as a first iteration. It helped us surface basic trends in language use and review structure, and gave us a baseline to compare future models against, particularly the embedding based model we had planned to build next.
 
+The TF-IDF model demonstrates significant practical value in extracting meaningful patterns from user generated content in the gaming industry. One of its primary applications lies in identifying key characteristics that resonate with players based on review text analysis. By processing the extensive collection of reviews on Steam, the model can automatically uncover frequently mentioned aspects (positive/negative) of games such as gameplay mechanics, storylines, quality of graphics, UI design, etc. This capability allows stakeholders to understand what drives player satisfaction without having to manually read through millions of text reviews, in turn providing data-driven insights into player preferences across different game genres/demographics.
+
+Furthermore, the TF-IDF model serves as a foundation for building sophisticated internal recommendation systems within gaming platforms. By analyzing the textual features that correlate with positive reviews and user engagement metrics (such as playtime), platforms can develop more nuanced recommendation algorithms that go beyond simple collaborative filtering. The model's ability to identify semantic patterns in review text enables it to match users with games that share similar appreciation of characteristics even if these games are different in genre.
+
+Perhaps most importantly, game developers can leverage this model as a competitive intelligence and product development tool. By applying TF-IDF analysis to reviews of their previous titles as well as competitor games, developers can identify specific features, mechanics, or design elements that consistently receive praise/criticism. These insights can enable them to make more informed decisions about feature prioritization in new projects, understand market gaps, and learn from their successes/failures. The model's correlation analysis (as shown in Fig. 8) reveals relationships between various game attributes and player sentiment which can provide actionable insights for game developers that are seeking to create more engaging gaming experiences for their users/customers.
+
 ### Model 2: Word2Vec Embeddings/Logistic Regression
 For our second model, we wanted to move beyond the limitations of TF-IDF by capturing the semantic depth of the review text. The idea was that word embeddings, specifically through Word2Vec, would allow us to leverage the context and relationships between words which is something we felt was important in understanding the tone and sentiment behind how users describe their experiences. We were especially drawn to the idea that certain expressions, even when phrased differently, could share similar embeddings and ultimately help the model generalize sentiment more accurately. Logistic regression felt like a natural fit here because it's efficient, interpretable, and it has consistently performed well in sentiment classification tasks, especially when paired with dense feature representations like embeddings.
 
@@ -137,6 +143,10 @@ The plan was to tune hyperparameters like vector size, window size, and minimum 
 # Need to finish
 ## Conclusion
 This is where you do a mind dump on your opinions and possible future directions. Basically what you wish you could have done differently. Here you close with final thoughts.
+
+### Real World Use
+
+The TF-IDF model presented in this project offers substantial practical value for the gaming industry ecosystem. The model’s ability to automatically extract and analyze player preferences from review text provides a scalable solution for understanding what drives user satisfaction across the Steam gaming platform. Whether applied to enhance recommendation systems, guide game developer decisions, or inform market research strategies, this model bridges the gap between unstructured user feedback and actionable business decisions. The demonstrated correlation between textual features and player behavior metrics validates the model's potential to transform how gaming companies understand/respond to their users/customers, ultimately supporting the creation of more engaging/successful gaming experiences for all.
 
 ### Overarching Impact
 
