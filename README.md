@@ -159,7 +159,7 @@ All work was completed collaboratively as a team, and no individual held a speci
   
 - Julia Klayman: I contributed to Milestone 2 by working on data preprocessing and feature exploration, including generating visualizations and helping with the GitHub outline. For Milestone 3, I helped develop the outline, worked on the write-up, organized figure layout, and revised the TF-IDF model graphs. These reflect areas I contributed to as part of our collaborative team effort.
   
-- David Lightfoot:
+- David Lightfoot: For Milestone 1, I documented our team meeting by writing detailed minutes as we reviewed different datasets, capturing key features and potential analysis approaches for each. For Milestone 2, I created our group folder and collaborated on data exploration code/visualizations, exchanging recommendations with my team. For Milestone 3, I contributed to the write-up and organized/labeled figures from our model's plots/graphs. For Milestone 4, I developed the discussion section and conclusion, addressing real-world applications and practical usefulness of our model. I want to thank my group members for their tenacity and invaluable help throughout this collaborative project.
   
 - Tristan Roman: 
 
