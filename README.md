@@ -145,9 +145,9 @@ Models that are able to summarize large quantities of information are growing ev
 # Need to finish
 ## Statement of Collaboration
 All work was completed collaboratively as a team, and no individual held a specific title or role.
-- Timothy Chang:
+- Timothy Chang: Although I didn't have access to Expanse for a large portion of Milestone 2, I was able to contribute to the team effort by suggesting directions for feature exploration and visualizations, as well as transferring our thought processes into the README file for our submission. By Milestone 3, I gained access to the SDSC and used it to train our TF-IDF model with guidance from my team, as well as generating some of the visualizations of our model accuracy. I made sure to coordinate and ask for updates from our team, and am very thankful for their communicativity and willingness to work together. 
   
-- Julia Klayman: I contributed to Milestone 2 by working on data preprocessing and feature exploration, including generating visualizations and helping with the GitHub outline. For Milestone 4, I helped develop the outline, worked on the write-up, organized figure layout, and revised the TF-IDF model graphs. These reflect areas I contributed to as part of our collaborative team effort.
+- Julia Klayman: I contributed to Milestone 2 by working on data preprocessing and feature exploration, including generating visualizations and helping with the GitHub outline. For Milestone 3, I helped develop the outline, worked on the write-up, organized figure layout, and revised the TF-IDF model graphs. These reflect areas I contributed to as part of our collaborative team effort.
   
 - David Lightfoot:
   
