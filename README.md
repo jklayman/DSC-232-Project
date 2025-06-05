@@ -22,6 +22,8 @@ Feature correlations were explored using variables such as playtime at review, p
 ### Model 1: TF-IDF/Random Forest
 The review text was tokenized, and common stopwords and special characters were removed. A simple lemmatizer was applied to group words with similar roots. The data was then split into training and test sets. A binary classification pipeline ws constructed using TF-IDF for feature extraction and a random forest classifier. The model was trained on the training set, and evaluation metrics, including AUC, were computed on both training and test data. Hyperparameter tuning was performed by iterating over the maximum number of TF-IDF features, the number of trees in the forest, and the maximum tree depth.
 
+{{Resampled dataset}}
+
 ### Model 2: Word2Vec Embeddings/Logistic Regression
 Due to system limitations, we were unable to implement this model; however, the following outlines the approach we had planned. In addition to the global preprocessing steps, we intended to tokenize the review text in preparation for embedding. To address class imbalance, we would have applied random undersampling to create a balanced training set of positive and negative reviews. A Word2Vec model was planned to generate word embeddings from the tokenized text, which would then serve as input to a logisitic regression classifier.
 
@@ -75,8 +77,18 @@ Lastly, maximum tree depth was tuned to explore its effect on model generalizati
 <img src="https://github.com/user-attachments/assets/407e16fa-8749-47ac-8baf-e4519ebaaa93" width="1000">
 _Fig. 11: Tuning the depth of trees in the random forest_
 
-## Either delete this or talk about what we think the result would've been
-### Model 2: Word2Vec Embeddings/Logistic Regression
+After resampling our model to get a roughly equal distribution between negative and positive reviews, we ran the above tunings again. 
+<img src="https://github.com/user-attachments/assets/d64e4a27-b37b-4edc-bb4b-abe6c06d8284" width="1000">
+
+_Fig. 12: Feature tuning with a balanced dataset_
+
+<img src="https://github.com/user-attachments/assets/bb776017-7e4b-4114-ac7c-7f5482fa208a" width="1000">
+
+_Fig. 13: Tuning the number of trees with a balanced dataset_
+
+<img src="https://github.com/user-attachments/assets/99f68d2f-1c12-4a33-91bf-82a66d8878cb" width="1000">
+
+_Fig. 14: Tuning the depths of trees with a balanced dataset_
 
 ## Discussion Section
 This is where you will discuss the why, and your interpretation and your though process from beginning to end. This will mimic the sections you have created in your methods section as well as new sections you feel you need to create. You can also discuss how believable your results are at each step. You can discuss any short comings. It's ok to criticize as this shows your intellectual merit, as to how you are thinking about things scientifically and how you are able to correctly scrutinize things and find short comings. In science we never really find the perfect solution, especially since we know something will probably come up int he future (i.e. donkeys) and mess everything up. If you do it's probably a unicorn or the data and model you chose are just perfect for each other!
