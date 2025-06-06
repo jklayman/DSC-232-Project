@@ -70,11 +70,11 @@ Hyperparameter tuning was conducted to improve the performance of the TF-IDF and
 _Fig. 9: Tuning the number of features in HashingTF_
 
 Next, the number of trees in the random forest classifer was varied. A range of tree counts was evaluated to determine the relationship between ensemble size and prediction accuracy, with corresponding AUC scores plotted for comparison (Fig. 10).
-<img src="https://github.com/user-attachments/assets/b2a6bfca-9012-430b-8f8f-e0d838dd4f1f" width="1000">
+<img src="https://github.com/user-attachments/assets/0f684687-4330-4811-a27a-46b0ce0b8879" width="1000">
 _Fig. 10: Tuning the number of trees in the random forest_
 
 Lastly, maximum tree depth was tuned to explore its effect on model generalization. Multiple depth values were tested, and their influence on AUC metrics was recorded to observe any overfitting or underfitting behavior at extreme values (Fig. 11).
-<img src="https://github.com/user-attachments/assets/407e16fa-8749-47ac-8baf-e4519ebaaa93" width="1000">
+<img src="https://github.com/user-attachments/assets/0b89db9a-daad-4df8-9aaf-706de9058cef" width="1000">
 _Fig. 11: Tuning the depth of trees in the random forest_
 
 After resampling our model to get a roughly equal distribution between negative and positive reviews, we ran the above tunings again. 
