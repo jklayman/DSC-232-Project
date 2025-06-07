@@ -85,8 +85,10 @@ _Fig. 13: Tuning the number of trees with a balanced dataset_
 
 _Fig. 14: Tuning the depths of trees with a balanced dataset_
 
-### Final Model and Results
-At the end of our hyperparameter tuning, we were left with a TF-IDF and random forest training pipeline that was able to predict whether a Steam review was positive or negative with 70% accuracy on our dataset. 
+## Final Model and Results
+At the end of our hyperparameter tuning, we were left with a TF-IDF and random forest training pipeline that was able to predict whether a Steam review was positive or negative with 70% accuracy on our dataset. This result was based on a balanced version of the dataset, which helped ensure the model was not biased toward the majority class. While 70% accuracy is not perfect, it demonstrates that even simple textual representations like TF-IDF can capture some underlying sentiment signals in user reviews.
+
+Figures 9 through 11 show the effects of tuning the number of features, trees, and tree depth prior to resampling. We found that performance improved as the number of features increased, but gains eventually plateaued, suggesting diminishing returns at higher dimensionality. Increasing the number of trees helped stabilize predictions but also added computational cost, while tree depth showed a classic underfitting-to-overfitting curve. After balancing the dataset, we repeated the same tuning (Figures 12-14) and saw similar trends, but with improved and more consistent AUC scores across all configurations. These results emphasized the importance of resampling in conjunction with tuning, and showed that even basic models can benefit significantly from a well structured optimization process.
 
 ## Discussion Section
 ### Initial Acquisition
