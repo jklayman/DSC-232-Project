@@ -7,7 +7,7 @@ What makes this dataset especially compelling is its relevance not only to game 
 
 The broader impact of this project extends beyong gaming. Techniques developed here can be applied to other domains where user feedback shapes product visibility and platform trust, such as Amazon, Yelp, or social media. Building a reliable, interpretable sentiment classifier supports the creation of safer, more personalized, and data-informed digital environments.
 
-We pulled our data from [this Kaggle dataset](https://www.kaggle.com/datasets/kieranpoc/steam-reviews)
+[Here is our raw dataset](https://www.kaggle.com/datasets/kieranpoc/steam-reviews). 
 
 ## Methods Section
 ### Initial Acquisition
