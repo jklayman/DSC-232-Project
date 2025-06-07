@@ -7,6 +7,8 @@ What makes this dataset especially compelling is its relevance not only to game 
 
 The broader impact of this project extends beyong gaming. Techniques developed here can be applied to other domains where user feedback shapes product visibility and platform trust, such as Amazon, Yelp, or social media. Building a reliable, interpretable sentiment classifier supports the creation of safer, more personalized, and data-informed digital environments.
 
+We pulled our data from [this Kaggle dataset](https://www.kaggle.com/datasets/kieranpoc/steam-reviews)
+
 ## Methods Section
 ### Initial Acquisition
 The dataset was uploaded in .csv.gz fromat to SDSC Expanse using Globus. A local machine was configured as a Globas endpoint, and the 50GB dataset was transferred to the Expanse scratch directory. After transfer, the data was converted to Parquet format. Spark was configured with maximum available resources for processing. The dataset contains approximately 113 million rows and 24 columns, including game identifiers, user behavior metrics, playtime data, and free-form review text.
