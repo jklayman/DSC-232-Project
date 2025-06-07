@@ -85,6 +85,9 @@ _Fig. 13: Tuning the number of trees with a balanced dataset_
 
 _Fig. 14: Tuning the depths of trees with a balanced dataset_
 
+### Final Model and Results
+At the end of our hyperparameter tuning, we were left with a TF-IDF and random forest training pipeline that was able to predict whether a Steam review was positive or negative with 70% accuracy on our dataset. 
+
 ## Discussion Section
 ### Initial Acquisition
 From the very beginning, the scale of our dataset forced us to think strategically about storage, transfer, and processing. The original .csv file clocked in at over 50GB, which made it immediately clear that traditional tools wouldn't cut it. We decided to compress the file into a .csv.gz format and use Globus Connect Personal for transfer, a choice driven not just by convenience, but by necessity. Transferring and storing files of this size through normal means would have been impractical, if not impossible, on personal machines or limited cloud resources. Even after converting the file to a more storage efficient Parquet format, the data still took up 27GB, reaffirming just how massive this dataset was.
