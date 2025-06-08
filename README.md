@@ -102,7 +102,7 @@ Preprocessing was a critical stage where we had to make deliberate choices about
 - Number of reviews written per author
 - Author's overall playtime
 - Author's playtime when writing the review
-- Whether the autor recommended the game
+- Whether the author recommended the game
 - How many readers found the review helpful
 - Whether the author received the game for free
 - Whether the review was written during early access
