@@ -36,7 +36,7 @@ The average review length was approximately 300 characters. However, there was a
 <img src="https://github.com/user-attachments/assets/9e1612cb-978a-4c05-816d-1e5050e5a2a3" width="1000">
 _Fig. 2: The distribution of the lengths of the reviews._ 
 
-A similar right-skewed distribution was observed in the number of games owned by reviewers. The average number of owned games was approximately 170, but some users reported owning over 5,000 games (Fig. 3)
+A similar right-skewed distribution was observed in the number of games owned by reviewers. The average number of owned games was approximately 170, but some users reported owning over 5,000 games (Fig. 3).
 <img src="https://github.com/user-attachments/assets/61f2e4a4-ea5a-4c6d-ab4c-457f6a750777" width="1000">
 _Fig. 3: The distribution of the amount of games owned by review authors._ 
 
