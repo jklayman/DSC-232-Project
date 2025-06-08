@@ -11,7 +11,7 @@ The raw dataset is available on Kaggle: Steam Reviews Dataset (https://www.kaggl
 
 ## Methods Section
 ### Initial Acquisition
-The dataset was uploaded in .csv.gz format to SDSC Expanse using Globus. A local machine was configured as a Globas endpoint, and the 50GB dataset was transferred to the Expanse scratch directory. After transfer, the data was converted to Parquet format. Spark was configured with maximum available resources for processing. The dataset contains approximately 113 million rows and 24 columns, including game identifiers, user behavior metrics, playtime data, and free-form review text.
+The dataset was uploaded in .csv.gz format to SDSC Expanse using Globus. A local machine was configured as a Globus endpoint, and the 50GB dataset was transferred to the Expanse scratch directory. After transfer, the data was converted to Parquet format. Spark was configured with maximum available resources for processing. The dataset contains approximately 113 million rows and 24 columns, including game identifiers, user behavior metrics, playtime data, and free-form review text.
 
 ### Pre-Processing
 The dataset was filtered to include only English-language reviews. Reviews that were empty or composed entirely of symbols or ASCII characters were removed. All review text was converted to lowercase, and excess whitespace and selected punctuation were cleaned. Playtime columns were converted from minutes to hours. Rows with inconsistencies between lifetime playtime and playtime at review were dropped. Boolean columns were cast to integers, and columns deemed irrelevant or mostly empty were removed from the dataset.
